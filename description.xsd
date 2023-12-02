@@ -1,0 +1,119 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Definition of types -->
+  <xs:simpleType name="contactType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="personal"/>
+      <xs:enumeration value="work"/>
+      <xs:enumeration value="other"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nameType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z][a-z]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="cityName">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z][a-z]*(\s[A-Z][a-z]*)*"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Definition of complex types -->
+  <xs:complexType name="personName">
+    <xs:sequence>
+      <xs:element name="firstname" type="nameType"/>
+      <xs:element name="middlename" type="nameType" minOccurs="0"/>
+      <xs:element name="lastname" type="nameType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contact">
+    <xs:all>
+      <xs:element name="name" type="personName"/>
+      <xs:element name="email" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="type" type="contactType" use="optional"/>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:pattern value="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
+              <xs:maxLength value="50"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="telephoneNumber" minOccurs="0" maxOccurs="unbounded">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+"/>
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="web" minOccurs="0" maxOccurs="unbounded">
+        <xs:simpleType>
+          <xs:restriction base="xs:anyURI"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="otherContact" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="serviceName">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="[A-Za-z0-9]*"/>
+                  <xs:maxLength value="30"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="userID">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="[A-Za-z0-9_\-\.@]*"/>
+                  <xs:maxLength value="40"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="address" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="street" type="cityName"/>
+            <xs:element name="number">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="[0-9]+[A-Za-z]*(/[0-9]*[A-Za-Z])*"/>
+                  <xs:maxLength value="30"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="postalCode" type="xs:integer"/>
+            <xs:element name="city" type="cityName"/>
+            <xs:element name="region" type="cityName" minOccurs="0" maxOccurs="1"/> 
+            <xs:element name="state" type="cityName" minOccurs="0" maxOccurs="1"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="note" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:element name="contacts">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="contact"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
