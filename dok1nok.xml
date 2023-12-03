@@ -1,0 +1,11 @@
+<!-- wrong format of email -->
+<contacts>
+  <contact>
+    <name>
+      <firstname>John</firstname>
+      <lastname>Doe</lastname>
+  	</name>
+    <email type="personal">nejaky@spatnyformat</email>
+    <telephoneNumber type="work">609987765</telephoneNumber>
+  </contact>
+</contacts>

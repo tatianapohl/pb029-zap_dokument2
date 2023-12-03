@@ -1,0 +1,10 @@
+<!-- missing "firstname" -->
+<contacts>
+  <contact>
+    <name>
+      <lastname>Smith</lastname>
+    </name>
+    <email type="personal">smith@example.com</email>
+    <telephoneNumber type="work">123456789</telephoneNumber>
+  </contact>
+</contacts>

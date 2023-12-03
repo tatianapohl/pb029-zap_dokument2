@@ -1,0 +1,12 @@
+<!-- unknown field "birthday" -->
+<contacts>
+  <contact>
+    <name>
+      <firstname>Alice</firstname>
+      <lastname>Johnson</lastname>
+    </name>
+    <email type="personal">alice@example.com</email>
+    <telephoneNumber type="work">987654321</telephoneNumber>
+    <birthday>1.2.2000</birthday>
+  </contact>
+</contacts>
