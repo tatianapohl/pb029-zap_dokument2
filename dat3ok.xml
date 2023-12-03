@@ -1,0 +1,106 @@
+<contacts>
+	<contact>
+    <name>
+        <firstname>Sienna</firstname>
+        <lastname>Smith</lastname>
+    </name>
+    <telephoneNumber type="other">909998745</telephoneNumber>
+    <address>
+      <street>Middle street</street>
+      <number>
+      	<streetNumber>12</streetNumber>
+      </number>
+      <postalCode>6788567</postalCode>
+      <city>Hogwarts</city>
+      <state>England</state>
+    </address>
+  </contact>
+
+  <contact>
+		<name>
+      <firstname>Dean</firstname>
+      <lastname>Lost</lastname>
+		</name>
+    <email type="personal">deanlost@gmail.com</email>
+    <email type="work">deanlost@ibm.com</email>
+    <telephoneNumber>56789565</telephoneNumber>
+    <web>https://sojka.pages.fi.muni.cz/PB029_web/finalwork/</web>
+    <otherContact>
+      <serviceName>Facebook</serviceName>
+      <userID>Dean Lost</userID>
+    </otherContact>
+    <address>
+      <street>Botanicka</street>
+      <number>
+      	<streetNumber>123</streetNumber>
+      </number>
+      <postalCode>60200</postalCode>
+      <city>Brno</city>
+      <region>Jihomoravsky kraj</region>
+      <state>Czech republic</state>
+    </address>
+    <note>assistant</note>
+	</contact>
+
+ 	<contact>
+		<name>
+      <firstname>Maria</firstname>
+      <middlename>Anna</middlename>
+      <lastname>Lopez</lastname>
+		</name>
+    <email type="personal">marria.lopezia@yahoo.com</email>
+    <telephoneNumber type="personal">567892345</telephoneNumber>
+    <telephoneNumber type="work">88888885</telephoneNumber>
+    <web type="work">https://fi.muni.cz</web>
+    <otherContact>
+      <serviceName>Instagram</serviceName>
+      <userID>@marraine888</userID>
+    </otherContact>
+    <address>
+      <street>Wide street</street>
+      <number>
+      	<streetNumber>123</streetNumber>
+        <descriptiveIdentifier>77</descriptiveIdentifier>
+      </number>
+      <postalCode>602009</postalCode>
+      <city>San Francisco</city>
+      <region>California</region>
+      <state>USA</state>
+    </address>
+	</contact>
+
+  <contact>
+    <name>
+      <firstname>Jane</firstname>
+        <middlename/>
+        <lastname>Doe</lastname>
+      </name>
+    <email type="work">jane.doe@company.com</email>
+    <telephoneNumber type="personal">123456789</telephoneNumber>
+    <web type="personal">https://www.janedoe.com</web>
+    <otherContact>
+      <serviceName>Twitter</serviceName>
+      <userID>@jane_doe</userID>
+    </otherContact>
+    <address>
+      <street>Main Street</street>
+        <number>
+          <streetNumber>100</streetNumber>
+          <descriptiveIdentifier/>
+        </number>
+      <postalCode>12345</postalCode>
+      <city>New York</city>
+    </address>
+    <note>This is a note specific to Jane Doe's contact information.</note>
+  </contact>
+
+  <contact>
+    <name>
+      <firstname>Alex</firstname>
+      <lastname>Jones</lastname>
+    </name>
+    <email type="personal">alex.jones@email.com</email>
+    <telephoneNumber type="work">123456789</telephoneNumber>
+  </contact>
+
+</contacts>
