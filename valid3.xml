@@ -27,7 +27,7 @@
     <web>https://sojka.pages.fi.muni.cz/PB029_web/finalwork/</web>
     <otherContact>
       <serviceName>Facebook</serviceName>
-      <userID>Dean Lost</userID>
+      <userID>DeanLost</userID>
     </otherContact>
     <address>
       <street>Botanicka</street>
@@ -72,7 +72,6 @@
   <contact>
     <name>
       <firstname>Jane</firstname>
-        <middlename/>
         <lastname>Doe</lastname>
       </name>
     <email type="work">jane.doe@company.com</email>

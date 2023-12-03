@@ -18,7 +18,7 @@
 
   <xs:simpleType name="cityName">
     <xs:restriction base="xs:string">
-      <xs:pattern value="[A-Z][a-z]*(\s[A-Za-z]*)*"/>
+      <xs:pattern value="[A-Z][a-zA-Z]*(\s[A-Za-z]*)*"/>
       <xs:maxLength value="100"/>
     </xs:restriction>
   </xs:simpleType>
