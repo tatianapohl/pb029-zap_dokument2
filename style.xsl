@@ -3,13 +3,23 @@
   <xsl:template match="/">
     <html>
       <head>
-      <meta http-equiv="Content-Language" content="sk"/>
+      <meta http-equiv="Content-Language" content="en"/>
       <meta http-equiv="Cache-Control" content="no-cache"/>
+      <meta name="author" content="HTML code: Tatiana Pohlodova; e-mail: xpohlod@fi.muni.cz" />
       <meta http-equiv="Pragma" content="no-cache"/>
       <meta name="description" content="This website represents the simple database of personal contacts."/>
       <meta name="keywords" content="list,contacts,phone,email,mail,web,website,adress,instagram,facebook"/>
       <style type="text/css">
-        <![CDATA[ body { min-width: 39em; margin: auto; padding: 0em 2em; background-color: #FFCC7F; font-family: sans-serif, serif; color: #000000; } #zahlavi { position: relative; top: 0em; min-width: 35em; max-width: 50em; height: 5em; margin: 0em auto; padding: 1em; background-color: #000000; color: #FFFFFF; } #obsah { position: relative; min-width: 35em; max-width: 52em; margin: 0em auto; padding: 1em 0em; background-color: #FFF3E0; color: #000000; } #text { padding: 0em 1em; } a { color: #807340; } a:hover { color: #FF6600; } h3 { margin: 0.5em 0em 0em 0em; } .program-background h3 { background-color: #FFF3E0; color: #000000; } .program-group-background h3 { background-color: #807340; color: #000000; } .program-name { padding: 0em 0.5em; background-color: #E6E1CF; color: #000000; } .program-group-name { padding: 0em 0.5em; background-color: #807340; color: #E6E1CF; } .program-background { margin: 0; padding: 0.5em 0.3em 0.3em 2em; list-style: none; background-color: #E6E1CF; color: #000000; } .program-group-background { padding: 0.5em 0em 0em 2em; background-color: #807340; color: #000000; } div.value { text-indent: 1.5em; } .label { font-style: italic; } ]]>
+        <![CDATA[ 
+          body { min-width: 39em; margin: auto; padding: 0em 2em; background-color: #ABDBE3; font-family: sans-serif, serif; color: #000000; } 
+          #zahlavi { position: relative; top: 0em; min-width: 35em; max-width: 60em; height: 5em; margin: 0em auto; padding: 1em; background-color: #000000; color: #FFFFFF; } 
+          #obsah { position: relative; min-width: 35em; max-width: 60em; margin: 0em auto; padding: 1em 1em; background-color: #eef8f9; color: #000000; } 
+          a { color: #aaa; } 
+          a:hover { color: #9ac5cc; } 
+          h3 { margin: 0.2em 0em 0em 0em; } 
+          .contact { padding: 0.2em; background-color:#ddf1f4 }
+          .address { padding: 0.1em; border: 2px dashed #aaa;}
+          ]]>
       </style>
         <title>
           <xsl:value-of select="@title"/>
@@ -22,7 +32,7 @@
         </div>
         <div id="obsah">
           <xsl:apply-templates select="contacts/contact">
-            <xsl:sort select="name/lastname"/> <!-- Sort by last name -->
+            <xsl:sort select="name/lastname"/>
           </xsl:apply-templates>
         </div>
       </body>
@@ -125,7 +135,7 @@
 
       <xsl:if test="note">
         <div class="notes">
-          <p><h3>Notes:</h3>
+          <p><h4>Notes:</h4>
           <ol>
             <xsl:for-each select="note">
               <li>
@@ -138,11 +148,11 @@
               </li>
             </xsl:for-each>
           </ol>
-        </p>
-
+          </p>
         </div>
       </xsl:if>
     </div>
+    <br/>
   </xsl:template>
 
 </xsl:transform>
