@@ -1,4 +1,4 @@
-<contacts>
+<contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
 	<contact>
 		<name>
       <firstname>John</firstname>
@@ -8,7 +8,7 @@
     <email type="personal">john.patrick.smith@yahoo.com</email>
     <email type="work">john.patrick.smith@oracle.com</email>
     <telephoneNumber type="other">567892345</telephoneNumber>
-    <telephoneNumber type="personal">59967892345</telephoneNumber>
+    <telephoneNumber type="personal">+420227892345</telephoneNumber>
     <web type="work">https://sojka.pages.fi.muni.cz/PB029_web/finalwork/</web>
     <otherContact>
       <serviceName>Instagram</serviceName>

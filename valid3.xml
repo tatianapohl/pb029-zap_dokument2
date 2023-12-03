@@ -1,4 +1,4 @@
-<contacts>
+<contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
 	<contact>
     <name>
         <firstname>Sienna</firstname>
@@ -85,12 +85,12 @@
       <street>Main Street</street>
         <number>
           <streetNumber>100</streetNumber>
-          <descriptiveIdentifier/>
         </number>
       <postalCode>12345</postalCode>
       <city>New York</city>
     </address>
-    <note>This is a note specific to Jane Doe's contact information.</note>
+    <note>Lunch tommorow at 1 PM</note>
+    <note>Call back</note>
   </contact>
 
   <contact>
