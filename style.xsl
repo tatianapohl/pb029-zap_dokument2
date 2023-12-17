@@ -14,11 +14,9 @@
           body { min-width: 39em; margin: auto; padding: 0em 2em; background-color: #ABDBE3; font-family: sans-serif, serif; color: #000000; } 
           #zahlavi { position: relative; top: 0em; min-width: 35em; max-width: 60em; height: 5em; margin: 0em auto; padding: 1em; background-color: #000000; color: #FFFFFF; } 
           #obsah { position: relative; min-width: 35em; max-width: 60em; margin: 0em auto; padding: 1em 1em; background-color: #eef8f9; color: #000000; } 
-          a { color: #aaa; } 
+          a { color: #484848; } 
           a:hover { color: #9ac5cc; } 
           h3 { margin: 0.2em 0em 0em 0em; } 
-          .contact { padding: 0.2em; background-color:#ddf1f4 }
-          .address { padding: 0.1em; border: 2px dashed #aaa;}
           ]]>
       </style>
         <title>
@@ -53,67 +51,62 @@
       </h2>
 
       <xsl:if test="email">
-        <p><h3>E-mail:</h3>
-          <ul>
-            <xsl:for-each select="email">
-              <li>
-                <a href="mailto:{.}" target="_blank">
-                  <xsl:value-of select="."/>
-                </a>
-                <xsl:if test="@type">
-                  <xsl:text> (</xsl:text>
-                    <xsl:value-of select="@type"/>
-                  <xsl:text>)</xsl:text>
-                </xsl:if>
-              </li>
-            </xsl:for-each>
-          </ul>
-        </p>
+        <h3>E-mail:</h3>
+        <ul>
+          <xsl:for-each select="email">
+            <li>
+              <a href="mailto:{.}">
+                <xsl:value-of select="."/>
+              </a>
+              <xsl:if test="@type">
+                <xsl:text> (</xsl:text>
+                  <xsl:value-of select="@type"/>
+                <xsl:text>)</xsl:text>
+              </xsl:if>
+            </li>
+          </xsl:for-each>
+        </ul>
       </xsl:if>
 
       <xsl:if test="web">
-        <p><h3>Website:</h3> 
-          <ul>
-            <xsl:for-each select="web">
-              <li>
-                <a href="{.}" target="_blank">
-                  <xsl:value-of select="."/>
-                </a>
-                  <xsl:if test="@type">
-                    <xsl:text> (</xsl:text>
-                      <xsl:value-of select="@type"/>
-                    <xsl:text>)</xsl:text>
-                  </xsl:if>
-              </li>
-            </xsl:for-each>
-          </ul>
-        </p>
-      </xsl:if>
-
-      <xsl:if test="telephoneNumber">
-        <p><h3>Telephone number:</h3>
-          <ul>
-            <xsl:for-each select="telephoneNumber">
-              <li>
+        <h3>Website:</h3> 
+        <ul>
+          <xsl:for-each select="web">
+            <li>
+              <a href="{.}" target="_blank">
                 <xsl:value-of select="."/>
+              </a>
                 <xsl:if test="@type">
                   <xsl:text> (</xsl:text>
                     <xsl:value-of select="@type"/>
                   <xsl:text>)</xsl:text>
                 </xsl:if>
-              </li>
-            </xsl:for-each>
-          </ul>
-        </p>
+            </li>
+          </xsl:for-each>
+        </ul>
+      </xsl:if>
+
+      <xsl:if test="telephoneNumber">
+        <h3>Telephone number:</h3>
+        <ul>
+          <xsl:for-each select="telephoneNumber">
+            <li>
+              <xsl:value-of select="."/>
+              <xsl:if test="@type">
+                <xsl:text> (</xsl:text>
+                  <xsl:value-of select="@type"/>
+                <xsl:text>)</xsl:text>
+              </xsl:if>
+            </li>
+          </xsl:for-each>
+        </ul>
       </xsl:if>
 
       <xsl:if test="otherContact">
-        <p>
-          <xsl:for-each select="otherContact">
-            <h3 style="display: inline;"><xsl:value-of select="./serviceName"/>: </h3><xsl:value-of select="./userID"/>
-            <br/>
-          </xsl:for-each>
-        </p>
+        <xsl:for-each select="otherContact">
+          <h3 style="display: inline;"><xsl:value-of select="./serviceName"/>: </h3><xsl:value-of select="./userID"/>
+          <br/>
+        </xsl:for-each>
       </xsl:if>
 
       <xsl:if test="address">
@@ -135,7 +128,7 @@
 
       <xsl:if test="note">
         <div class="notes">
-          <p><h4>Notes:</h4>
+          <h4>Notes:</h4>
           <ol>
             <xsl:for-each select="note">
               <li>
@@ -148,7 +141,6 @@
               </li>
             </xsl:for-each>
           </ol>
-          </p>
         </div>
       </xsl:if>
     </div>
